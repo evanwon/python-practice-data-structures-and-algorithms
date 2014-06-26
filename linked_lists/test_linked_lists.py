@@ -174,6 +174,9 @@ class TestLinkedLists(TestCase):
         count = sum(1 for n in linked_list)
 
         self.assertEqual(3, count)
+        # Verify our head and tail haven't changed
+        self.assertEqual(11, linked_list.head.value)
+        self.assertEqual(31, linked_list.tail.value)
 
     def test_list_iterator_zero_items(self):
         linked_list = LinkedList()
@@ -190,3 +193,6 @@ class TestLinkedLists(TestCase):
         count = sum(1 for n in linked_list)
 
         self.assertEqual(1, count)
+        # Verify our head and tail haven't changed
+        self.assertEqual(22, linked_list.head.value)
+        self.assertEqual(22, linked_list.tail.value)
