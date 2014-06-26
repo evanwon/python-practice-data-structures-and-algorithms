@@ -58,6 +58,7 @@ class LinkedList:
             while current.next != self.tail:
                 current = current.next
 
+            current.next = None
             self.tail = current
 
         self.count -= 1
