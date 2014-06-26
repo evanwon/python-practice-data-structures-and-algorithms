@@ -127,6 +127,7 @@ class TestLinkedLists(TestCase):
         self.assertEqual(2, ll.count)
         self.assertEqual(10, ll.head.value)
         self.assertEqual(20, ll.tail.value)
+        self.assertIsNone(ll.tail.next)
 
     def test_ll_remove_last_two_items(self):
         ll = LinkedList()
@@ -139,6 +140,7 @@ class TestLinkedLists(TestCase):
         self.assertEqual(1, ll.count)
         self.assertEqual(10, ll.head.value)
         self.assertEqual(10, ll.tail.value)
+        self.assertIsNone(ll.tail.next)
 
     def test_ll_remove_last_one_items(self):
         ll = LinkedList()
