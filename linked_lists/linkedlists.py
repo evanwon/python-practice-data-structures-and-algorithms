@@ -15,6 +15,13 @@ class LinkedList:
         self.tail = None
         self.count = 0
 
+    def __iter__(self):
+        current = self.head
+
+        while current is not None:
+            yield current
+            current = current.next
+
     def add_first(self, node):
         """ Adds a node as the first item in the list
         :param node: The Node to add
@@ -76,9 +83,6 @@ class LinkedList:
             self.tail = current
 
         self.count -= 1
-
-    def remove(self, node):
-        pass
 
     def find_node(self, node):
         pass
