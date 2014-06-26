@@ -16,6 +16,10 @@ class LinkedList:
         self.count = 0
 
     def add_first(self, node):
+        """ Adds a node as the first item in the list
+        :param node: The Node to add
+        :return: None
+        """
         node.next = self.head
         self.head = node
 
@@ -25,6 +29,10 @@ class LinkedList:
             self.tail = self.head
 
     def add_last(self, node):
+        """ Adds a Node as the last item in the list
+        :param node: The Node to add
+        :return: None
+        """
         if self.count == 0:
             self.head = node
         else:
@@ -35,6 +43,9 @@ class LinkedList:
         self.count += 1
 
     def remove_first(self):
+        """ Removes the first Node from the list
+        :return: None
+        """
         if self.count == 0:
             return
 
@@ -46,6 +57,9 @@ class LinkedList:
             self.tail = None
 
     def remove_last(self):
+        """ Removes the last Node from the list
+        :return: None
+        """
         if self.count == 0:
             return
 
@@ -76,6 +90,10 @@ class LinkedList:
         pass
 
     def deep_count(self):
+        """ Iterates through the entire Linked List to perform a count of all Nodes in the list
+        Note: Use count to get a simple count of all Nodes, maintained during add and remove functions
+        :return: The number of Nodes in the Linked List
+        """
         counter = 0
 
         current = self.head
