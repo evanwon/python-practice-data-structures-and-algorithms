@@ -315,3 +315,55 @@ class TestLinkedLists(TestCase):
         self.assertIsNotNone(ll.head)
         self.assertIsNotNone(ll.tail)
         self.assertIsNone(ll.tail.next)
+
+    def test_len(self):
+        ll = LinkedList()
+
+        ll.add_first(10)
+        ll.add_first(20)
+        ll.add_first(30)
+
+        self.assertEqual(3, len(ll))
+
+    def test_len_no_items(self):
+        ll = LinkedList()
+
+        self.assertEqual(0, len(ll))
+
+    def test_contains_contains_value(self):
+        ll = LinkedList()
+
+        node1 = Node(30)
+        node2 = Node(40)
+        node3 = Node(88)
+
+        ll.add_first(node1)
+        ll.add_first(node2)
+        ll.add_first(node3)
+
+        result = node3 in ll
+
+        self.assertTrue(result)
+
+    def test_contains_does_not_contain_value(self):
+        ll = LinkedList()
+
+        node1 = Node(30)
+        node2 = Node(40)
+        node3 = Node(88)
+
+        ll.add_first(node1)
+        ll.add_first(node2)
+        ll.add_first(node3)
+
+        result = Node(300) in ll
+
+
+        self.assertFalse(result)
+
+    def test_contains__no_values__nothing_found(self):
+        ll = LinkedList()
+
+        result = Node(88) in ll
+
+        self.assertFalse(result)

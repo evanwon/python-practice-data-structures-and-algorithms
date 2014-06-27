@@ -5,7 +5,6 @@ class Node:
         self.value = value
         self.next = next
 
-
 class LinkedList:
     """ Defines a Linked List object
     """
@@ -21,6 +20,26 @@ class LinkedList:
         while current is not None:
             yield current
             current = current.next
+
+    def __len__(self):
+        return self.count
+
+    def __contains__(self, item):
+        """ Returns true if the item's value is found in the list
+        (Since the add functions take a value and create a node internally, we can only check
+        if the list contains the value - the external caller doesn't have a reference to the nodes
+        within the list
+        :param item: The Node whose value to seek
+        :return: True if a Node with the corresponding value is found
+        """
+        current = self.head
+
+        while current is not None:
+            if current.value == item:
+                return True
+            current = current.next
+
+        return False
 
     def add_first(self, value):
         """ Adds a value as the first Node in the list
