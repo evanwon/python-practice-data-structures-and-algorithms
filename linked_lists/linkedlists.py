@@ -123,8 +123,7 @@ class LinkedList:
             if current.value == value:
                 if prev is None:
                     # case one: our previous node is none, which means we're at the start of the list
-                    # set head equal to its next to remove head
-                    self.head = self.head.next
+                    self.remove_first()
                 else:
                     # case two: previous exists, so cut out current by setting prev's next to current's next
                     # if current was the tail, its next would be None, which works out just fine when setting prev's
@@ -132,15 +131,10 @@ class LinkedList:
                     prev.next = current.next
 
                     # if we removed the tail (and thus prev's next is None), make prev the tail
-                    if prev.next is None:
+                    if current.next is None:
                         self.tail = prev
 
-                self.count -= 1
-
-                # if we're out of nodes, set head and tail to None
-                if self.count == 0:
-                    self.tail = None
-                    self.head = None
+                    self.count -= 1
 
                 if remove_only_first:
                     break
