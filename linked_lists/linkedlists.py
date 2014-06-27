@@ -22,11 +22,13 @@ class LinkedList:
             yield current
             current = current.next
 
-    def add_first(self, node):
-        """ Adds a node as the first item in the list
-        :param node: The Node to add
+    def add_first(self, value):
+        """ Adds a value as the first Node in the list
+        :param value: The value to add
         :return: None
         """
+        node = Node(value)
+
         node.next = self.head
         self.head = node
 
@@ -35,11 +37,14 @@ class LinkedList:
         if self.tail is None:
             self.tail = self.head
 
-    def add_last(self, node):
+    def add_last(self, value):
         """ Adds a Node as the last item in the list
-        :param node: The Node to add
+        :param value: The value to add
         :return: None
         """
+
+        node = Node(value)
+
         if self.count == 0:
             self.head = node
         else:
