@@ -84,8 +84,49 @@ class LinkedList:
 
         self.count -= 1
 
-    def remove_by_value(self):
-        pass
+    def remove_by_value(self, value, remove_only_first = True):
+        """ Remove all Nodes with the provided value
+        :param value: If a Node has this value, it will be removed
+        :param remove_only_first: If True, only remove the first matching Node encountered. Otherwise,
+        continue removing all nodes with the provided value.
+        :return: None
+        """
+
+        if self.count == 0:
+            return
+
+        current = self.head
+        prev = None
+
+        while current is not None:
+            if current.value == value:
+                if prev is None:
+                    # case one: our previous node is none, which means we're at the start of the list
+                    # set head equal to its next to remove head
+                    self.head = self.head.next
+                else:
+                    # case two: previous exists, so cut out current by setting prev's next to current's next
+                    # if current was the tail, its next would be None, which works out just fine when setting prev's
+                    # next to be None
+                    prev.next = current.next
+
+                    # if we removed the tail (and thus prev's next is None), make prev the tail
+                    if prev.next is None:
+                        self.tail = prev
+
+                self.count -= 1
+
+                # if we're out of nodes, set head and tail to None
+                if self.count == 0:
+                    self.tail = None
+                    self.head = None
+
+                if remove_only_first:
+                    break
+
+            # keep on movin' through the list
+            prev = current
+            current = current.next
 
     def find_node(self, node):
         pass
