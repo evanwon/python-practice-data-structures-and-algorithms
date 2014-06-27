@@ -84,13 +84,13 @@ class LinkedList:
 
         self.count -= 1
 
+    def remove_by_value(self):
+        pass
+
     def find_node(self, node):
         pass
 
     def find_value(self, value):
-        pass
-
-    def enumerate(self):
         pass
 
     def deep_count(self):
