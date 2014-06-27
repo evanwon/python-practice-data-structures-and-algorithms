@@ -116,9 +116,6 @@ class LinkedList:
         :return: None
         """
 
-        if self.count == 0:
-            return
-
         current = self.head
         prev = None
 
