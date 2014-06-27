@@ -144,6 +144,10 @@ class LinkedList:
             current = current.next
 
     def clear(self):
+        """
+        :return: Remove all items from the list
+        """
+        # Thanks, garbage collector!
         self.head = None
         self.tail = None
         self.count = 0
