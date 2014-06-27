@@ -367,3 +367,25 @@ class TestLinkedLists(TestCase):
         result = Node(88) in ll
 
         self.assertFalse(result)
+
+    def test__clear__three_value(self):
+        ll = LinkedList()
+
+        ll.add_first(100)
+        ll.add_first(200)
+        ll.add_first(300)
+
+        ll.clear()
+
+        self.assertEqual(0, ll.count)
+        self.assertIsNone(ll.head)
+        self.assertIsNone(ll.tail)
+
+    def test__clear__no_value(self):
+        ll = LinkedList()
+
+        ll.clear()
+
+        self.assertEqual(0, ll.count)
+        self.assertIsNone(ll.head)
+        self.assertIsNone(ll.tail)

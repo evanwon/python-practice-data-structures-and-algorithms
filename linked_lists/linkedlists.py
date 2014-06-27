@@ -143,6 +143,11 @@ class LinkedList:
             prev = current
             current = current.next
 
+    def clear(self):
+        self.head = None
+        self.tail = None
+        self.count = 0
+
     def deep_count(self):
         """ Iterates through the entire Linked List to perform a count of all Nodes in the list
         Note: Use count to get a simple count of all Nodes, maintained during add and remove functions
