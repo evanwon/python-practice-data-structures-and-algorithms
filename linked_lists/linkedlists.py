@@ -28,7 +28,7 @@ class LinkedList:
         """ Returns true if the item's value is found in the list
         (Since the add functions take a value and create a node internally, we can only check
         if the list contains the value - the external caller doesn't have a reference to the nodes
-        within the list
+        within the list)
         :param item: The Node whose value to seek
         :return: True if a Node with the corresponding value is found
         """
