@@ -197,14 +197,14 @@ class TestLinkedLists(TestCase):
         self.assertEqual(22, ll.head.value)
         self.assertEqual(22, ll.tail.value)
         
-    def test__remove_by_value__remove_middle(self):
+    def test__remove_value__remove_middle(self):
         ll = LinkedList()
         
         ll.add_last(15)
         ll.add_last(5)
         ll.add_last(215)
         
-        ll.remove_by_value(5)
+        ll.remove_value(5)
         
         self.assertEqual(2, ll.count)
         self.assertEqual(15, ll.head.value)
@@ -214,7 +214,7 @@ class TestLinkedLists(TestCase):
         self.assertIsNotNone(ll.tail)
         self.assertIsNone(ll.tail.next)
         
-    def test__remove_by_value__remove_end(self):
+    def test__remove_value__remove_end(self):
         ll = LinkedList()
         
         ll.add_last(15)
@@ -222,21 +222,21 @@ class TestLinkedLists(TestCase):
         ll.add_last(5)
         ll.add_last(215)
         
-        ll.remove_by_value(215)
+        ll.remove_value(215)
         
         self.assertEqual(3, ll.count)
         self.assertEqual(15, ll.head.value)
         self.assertEqual(5, ll.tail.value)   
         self.assertIsNone(ll.tail.next)   
 
-    def test__remove_by_value__remove_first(self):
+    def test__remove_value__remove_first(self):
         ll = LinkedList()
         
         ll.add_last(15)
         ll.add_last(5)
         ll.add_last(215)
         
-        ll.remove_by_value(15)
+        ll.remove_value(15)
         
         self.assertEqual(2, ll.count)
         self.assertEqual(5, ll.head.value)
@@ -246,25 +246,25 @@ class TestLinkedLists(TestCase):
         self.assertIsNotNone(ll.tail)
         self.assertIsNone(ll.tail.next)
         
-    def test__remove_by_value__remove_only_element(self):
+    def test__remove_value__remove_only_element(self):
         ll = LinkedList()
         
         ll.add_last(15)
         
-        ll.remove_by_value(15)
+        ll.remove_value(15)
         
         self.assertEqual(0, ll.count)
         self.assertIsNone(ll.head)   
         self.assertIsNone(ll.tail)   
         
-    def test__remove_by_value__remove_nonexistent_item_does_nothing(self):
+    def test__remove_value__remove_nonexistent_item_does_nothing(self):
         ll = LinkedList()
         
         ll.add_last(15)
         ll.add_last(5)
         ll.add_last(215)
         
-        ll.remove_by_value(10)
+        ll.remove_value(10)
         
         self.assertEqual(3, ll.count)
         self.assertEqual(15, ll.head.value)
@@ -274,19 +274,19 @@ class TestLinkedLists(TestCase):
         self.assertIsNotNone(ll.tail)
         self.assertIsNone(ll.tail.next)
 
-    def test__remove_by_value__no_items_does_nothing(self):
+    def test__remove_value__no_items_does_nothing(self):
         ll = LinkedList()
 
-        ll.remove_by_value(10)
+        ll.remove_value(10)
         self.assertIsNone(ll.head)
         self.assertIsNone(ll.tail)
 
-    def test__remove_by_value__add_remove_add(self):
+    def test__remove_value__add_remove_add(self):
         ll = LinkedList()
 
         ll.add_last(45)
         ll.add_last(35)
-        ll.remove_by_value(45)
+        ll.remove_value(45)
         ll.add_last(75)
 
         self.assertEqual(2, ll.count)
@@ -297,7 +297,7 @@ class TestLinkedLists(TestCase):
         self.assertIsNotNone(ll.tail)
         self.assertIsNone(ll.tail.next)
 
-    def test__remove_by_value__remove_all_with_value(self):
+    def test__remove_value__remove_all_with_value(self):
         ll = LinkedList()
 
         ll.add_last(15)
@@ -306,7 +306,7 @@ class TestLinkedLists(TestCase):
         ll.add_last(215)
         ll.add_last(15)
 
-        ll.remove_by_value(15, remove_only_first=False)
+        ll.remove_value(15, remove_only_first=False)
 
         self.assertEqual(2, ll.count)
         self.assertEqual(5, ll.head.value)

@@ -108,7 +108,7 @@ class LinkedList:
 
         self.count -= 1
 
-    def remove_by_value(self, value, remove_only_first = True):
+    def remove_value(self, value, remove_only_first = True):
         """ Remove all Nodes with the provided value
         :param value: If a Node has this value, it will be removed
         :param remove_only_first: If True, only remove the first matching Node encountered. Otherwise,
